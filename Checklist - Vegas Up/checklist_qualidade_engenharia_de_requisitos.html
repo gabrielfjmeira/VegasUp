@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;            
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    input[type="checkbox"] {
+        margin-right: 10px;
+    }
+
+    select {
+        width: 100%;
+        padding: 5px;
+        margin: 10px 0;
+    }
+
+    </style>
+</head>
+<body>
+
+    <center>
+        <h1>
+            Checklist de Engenharia de Requisitos - Vegas Up
+        </h1>        
+
+        <h3>
+            Realize o print do formulário para registrar na avaliação!
+        </h3>        
+    </center>   
+
+    <form>
+        <table id="tabela">
+            <!--CABEÇALHO DA TABELA-->
+            <tr>
+                <th>ID</th>
+                <th>ÁREA</th>
+                <th>DESCRIÇÃO</th>
+                <th>FOI ATINGIDO?</th>
+                <th>RESPONSÁVEL</th>
+                <th>OBSERVAÇÕES</th>
+                <th>CLASSIFICAÇÃO NCF</th>
+                <th>AÇÕES RECOMENDADAS</th>
+                <th>REALIZADA?</th>
+            </tr>
+
+            <!--ID 01-->
+            <tr>
+                <td>01</td>
+                <td>
+                    <select id="sa01" name="sa01">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Os requisitos do projeto foram elicitados com os fornecedores de requisitos?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa01" name="cfa01" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr01" name="sr01">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob01" id="ob01"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf01" name="sncf01">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar01" id="ar01"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr01" name="cr01" value="true">
+                    </label>
+                </td>
+            </tr> 
+            
+            <!--ID 02-->
+            <tr>
+                <td>02</td>
+                <td>
+                    <select id="sa02" name="sa02">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>                        
+                    </select>
+                </td>
+                <td>Os requisitos do projeto foram descritos e especificados na planilha de requisitos do projeto referente?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa02" name="cfa02" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr02" name="sr02">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob02" id="ob02"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf02" name="sncf02">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar02" id="ar02"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr02" name="cr02" value="true">
+                    </label>
+                </td>
+            </tr> 
+
+            <!--ID 03-->
+            <tr>
+                <td>03</td>
+                <td>
+                    <select id="sa03" name="sa03">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Os requisitos do projeto foram devidamente especificados? (Possuem ambiguidade? Seguem o padrão de escrita estabelecido pela empresa?)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa03" name="cfa03" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr03" name="sr03">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob03" id="ob03"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf03" name="sncf03">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar03" id="ar03"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr03" name="cr03" value="true">
+                    </label>
+                </td>
+            </tr>   
+
+            <!--ID 04-->
+            <tr>
+                <td>04</td>
+                <td>
+                    <select id="sa04" name="sa04">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Foi estabelecida uma ordem de prioridade de execução para os requisitos especificados? (Por exemplo: Alta, Média e Baixa prioridade)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa04" name="cfa04" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr04" name="sr04">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob04" id="ob04"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf04" name="sncf04">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar04" id="ar04"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr04" name="cr04" value="true">
+                    </label>
+                </td>
+            </tr>  
+
+            <!--ID 05-->
+            <tr>
+                <td>05</td>
+                <td>
+                    <select id="sa05" name="sa05">                        
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Foram pontuadas as necessidades e restrições para a realização de cada requisito? (Prazo e Orçamento)</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa05" name="cfa05" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr05" name="sr05">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob05" id="ob05"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf05" name="sncf05">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar05" id="ar05"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr05" name="cr05" value="true">
+                    </label>
+                </td>
+            </tr> 
+            
+            <!--ID 06-->
+            <tr>
+                <td>06</td>
+                <td>
+                    <select id="sa06" name="sa06">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Os requisitos especificados atendem as necessidades apresentadas pelos fornecedores de requisitos?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa06" name="cfa06" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr06" name="sr06">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob06" id="ob06"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf06" name="sncf06">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar06" id="ar06"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr06" name="cr06" value="true">
+                    </label>
+                </td>
+            </tr>
+            
+
+            <!--ID 07-->
+            <tr>
+                <td>07</td>
+                <td>
+                    <select id="sa07" name="sa07">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Os requisitos foram analisados junto aos fornecedores de requisitos?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa07" name="cfa07" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr07" name="sr07">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob07" id="ob07"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf07" name="sncf07">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar07" id="ar07"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr07" name="cr07" value="true">
+                    </label>
+                </td>
+            </tr>           
+            
+            <!--ID 08-->
+            <tr>
+                <td>08</td>
+                <td>
+                    <select id="sa08" name="sa08">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>O compromisso da equipe técnica com a implementação dos requisitos foi obtido por meio de reuniões onde o analista de requisitos designou e explicou as funcionalidades dos requisitos para a equipe de desenvolvimento?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa08" name="cfa08" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr08" name="sr08">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob08" id="ob08"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf08" name="sncf08">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar08" id="ar08"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr08" name="cr08" value="true">
+                    </label>
+                </td>
+            </tr>
+
+            <!--ID 09-->            
+            <tr>
+                <td>09</td>
+                <td>
+                    <select id="sa09" name="sa09">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Foi elaborada a matriz de rastreabilidade dos requisitos do projeto, para que assim, os requisitos estejam organizados de forma rastreável?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa09" name="cfa09" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr09" name="sr09">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob09" id="ob09"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf09" name="sncf09">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar09" id="ar09"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr09" name="cr09" value="true">
+                    </label>
+                </td>
+            </tr> 
+
+            <!--ID 10-->
+            <tr>
+                <td>10</td>
+                <td>
+                    <select id="sa10" name="sa10">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Engenharia de Requisitos</option>
+                    </select>
+                </td>
+                <td>Os planos, atividades e demais produtos de trabalho relacionados são revisados durante os marcos do projeto?</td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cfa10" name="cfa10" value="true" onchange="calculaConformidade();">
+                    </label>
+                </td>
+                <td>
+                    <select id="sr10" name="sr10">
+                        <option value="opcao0" disabled>Selecione uma opção</option>
+                        <option value="opcao1" selected>Flávio</option>
+                        <option value="opcao2">Equipe de Desenvolvimento</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ob10" id="ob10"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <select id="sncf10" name="sncf10">
+                        <option value="opcao1" selected disabled>Selecione uma opção</option>
+                        <option value="opcao2">Baixa-Simples (1 dia)</option>
+                        <option value="opcao3">Baixa-Complexa (2 dias)</option>
+                        <option value="opcao4">Intermediária-Simples (3 dias)</option>
+                        <option value="opcao5">Intermediária-Complexa (4 dias)</option>
+                        <option value="opcao6">Alta-Simples (5 dias)</option>
+                        <option value="opcao7">Alta-Complexa (6 dias)</option>
+                        <option value="opcao8">Muito-Complexa (7 dias)</option>
+                    </select>
+                </td>
+                <td>
+                    <label>
+                        <textarea name="ar10" id="ar10"></textarea>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <input type="checkbox" id="cr10" name="cr10" value="true">
+                    </label>
+                </td>
+            </tr>
+
+            
+        </table>
+    </form>
+
+    <center>
+        <h2>
+            ADERÊNCIA DA AVALIAÇÃO: <span id="pncf">0</span>%
+        </h2>
+    </center>
+
+    <script>
+        function calculaConformidade() {
+            //Definição de variáveis
+            var cfa01 = document.getElementById("cfa01");
+            var cfa02 = document.getElementById("cfa02");
+            var cfa03 = document.getElementById("cfa03");
+            var cfa04 = document.getElementById("cfa04");
+            var cfa05 = document.getElementById("cfa05");
+            var cfa06 = document.getElementById("cfa06");
+            var cfa07 = document.getElementById("cfa07");
+            var cfa08 = document.getElementById("cfa08");
+            var cfa09 = document.getElementById("cfa09");
+            var cfa10 = document.getElementById("cfa10");
+            var tabela = document.getElementById("tabela");
+            var linhasTabela = 10; 
+            var percentual = document.getElementById("pncf");
+
+            //Variável auxiliar do código
+            var aux = 0;
+
+            //Soma valor na variável auxiliar
+            if (cfa01.checked) {
+                aux += 1;
+            } 
+
+            if (cfa02.checked) {
+                aux += 1;
+            } 
+            
+            if (cfa03.checked) {
+                aux += 1;
+            } 
+
+            if (cfa04.checked) {
+                aux += 1;
+            } 
+
+            if (cfa05.checked) {
+                aux += 1;
+            } 
+
+            if (cfa06.checked) {
+                aux += 1;
+            }
+            
+            if (cfa07.checked) {
+                aux += 1;
+            } 
+
+            if (cfa08.checked) {
+                aux += 1;
+            }
+            
+            if (cfa09.checked) {
+                aux += 1;
+            } 
+
+            if (cfa10.checked) {
+                aux += 1;
+            }             
+            
+            //Calcula percentual de aderência
+            percentual.textContent = Math.round((aux/(linhasTabela)) * 100);            
+
+        }
+    </script>
+</body>
+</html>
